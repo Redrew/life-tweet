@@ -68,9 +68,11 @@ def get_summary_from_html(html: str) -> str:
     return summary
 
 
-def scrape_websites(history, verbose=False):
+def scrape_websites(history, ignore_google=True, verbose=False):
     raw_html = []
     for datetime, url, title in history:
+        if ignore_google and title.endswith('Google Search'):
+            continue
         if verbose:
             print(f'Title: {title}')
         try:
@@ -81,17 +83,17 @@ def scrape_websites(history, verbose=False):
     return raw_html
 
 
-def get_data_from_browser(use_recent = False, time_limit=600, browser_type='all'):
+def get_data_from_browser(use_recent = False, ignore_google=True, time_limit=600, browser_type='all'):
     if use_recent:
         history = get_recent_history(time_limit=time_limit, browser_type=browser_type)
     else:
         history = get_all_history(browser_type=browser_type)
-    raw_html = scrape_websites(history)
+    raw_html = scrape_websites(history, ignore_google=ignore_google)
     print('parsing texts scraped from html')
     website_texts = [get_summary_from_html(html) for html in raw_html]
     return website_texts
 
 if __name__ == '__main__':
-    website_texts = get_data_from_browser(use_recent=True, time_limit=240, browser_type='Chrome')
+    website_texts = get_data_from_browser(use_recent=False, time_limit=240, ignore_google=True, browser_type='Chrome')
     with open('browser_clean.pkl', 'wb') as handle:
         pickle.dump(website_texts, handle)
