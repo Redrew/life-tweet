@@ -114,4 +114,5 @@ def get_chat_gpt_output(prompt):
     output = engine.generate(prompt, num_tokens=256, num_samples=1, top_p=0.5)
     return output
 
-print(get_chat_gpt_output("sample text"))
+if __name__ == "__main__":
+  print(get_chat_gpt_output("sample text"))
