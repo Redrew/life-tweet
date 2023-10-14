@@ -40,7 +40,7 @@ class OpenAIEngine():
     if logprobs and logprobs[0] is None:
       # GPT-3 API does not return logprob of the first token
       logprobs[0] = 0.0
-    return tokens, logprobs
+    return np.mean(logprobs)
 
   def perplexity(self, text):
     """Compute the perplexity of the provided text."""
