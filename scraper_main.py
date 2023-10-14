@@ -92,6 +92,6 @@ def get_data_from_browser(use_recent = False, time_limit=120, browser_type='all'
     return website_texts
 
 if __name__ == '__main__':
-    website_texts = get_data_from_browser(use_recent=True, browser_type='Chrome')
+    website_texts = get_data_from_browser(use_recent=True, time_limit=240, browser_type='Chrome')
     with open('browser_clean.pkl', 'wb') as handle:
         pickle.dump(website_texts, handle)
