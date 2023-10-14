@@ -33,7 +33,7 @@ def get_all_history(browser_type='all', restrict_bookmarks=False):
     return user_data  # [datetime.datetime, url, title, folder]
 
 
-def get_recent_history(time_limit=120, browser_type='all', restrict_bookmarks=False):
+def get_recent_history(time_limit, browser_type='all', restrict_bookmarks=False):
     current_dateTime = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
     start_dateTime = current_dateTime - datetime.timedelta(seconds=time_limit)
     
@@ -81,9 +81,9 @@ def scrape_websites(history, verbose=False):
     return raw_html
 
 
-def get_data_from_browser(use_recent = False, time_limit=120, browser_type='all'):
+def get_data_from_browser(use_recent = False, time_limit=600, browser_type='all'):
     if use_recent:
-        history = get_recent_history(time_limit=120, browser_type=browser_type)
+        history = get_recent_history(time_limit=time_limit, browser_type=browser_type)
     else:
         history = get_all_history(browser_type=browser_type)
     raw_html = scrape_websites(history)
