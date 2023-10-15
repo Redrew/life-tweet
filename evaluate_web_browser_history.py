@@ -2,6 +2,8 @@ import openai
 from openai_api import *
 import numpy as np
 
+# Set up the OpenAI API key
+openai.api_key = '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'
 
 categories = [
     "hobbies",

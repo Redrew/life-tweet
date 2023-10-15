@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from IPython.display import clear_output
 from functools import partial
 
-OPENAI_SECRET_KEY = "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"
+OPENAI_SECRET_KEY = "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"
 openai.api_key = OPENAI_SECRET_KEY
 
 class OpenAIEngine():
