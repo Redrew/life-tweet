@@ -5,7 +5,6 @@ def add_deltas(profile, summary, deltas):
     summary = summary.strip()
     relevancy = evaluate_browser_history(summary, engine)
     for category, relevant in relevancy.items():
-        # relevant = "yes" # HACK
         if relevant == 'no': continue
         traits = profile[category]
         biographer_info = f"You are a biographer writing about Alex's hobbies.\nYou know this about Alex. {traits}\nAlex is reading a website. The website says:\n{summary}"
