@@ -5,9 +5,6 @@ import streamlit as st
 with open("example/profile.json") as fp:
 	profile = json.load(fp)
 
-with open("example/profile_diff.json") as fp:
-	profile_diff = json.load(fp)
-
 
 def edit_profile():
 	for k, v in profile.items():
@@ -34,6 +31,8 @@ def write_prev_and_curr_value(key, prev_value, diff_value):
 	return st.checkbox(f"accept {human_readable_key(key)} change")
 
 def whats_new():
+	with open("example/profile_diff.json") as fp:
+		profile_diff = json.load(fp)
 	st.title("life tweet: what's new?")
 	rejected_keys = []
 	

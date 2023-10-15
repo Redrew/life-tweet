@@ -107,8 +107,8 @@ class OpenAIEngine():
     return response
 
 
-# MODEL_NAME = "text-davinci-002"
-# engine = OpenAIEngine(MODEL_NAME)
+MODEL_NAME = "text-davinci-003"
+engine = OpenAIEngine(MODEL_NAME)
 
 
 def get_chat_gpt_output(prompt, top_p=0.5):

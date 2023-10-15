@@ -5,7 +5,7 @@ from life_summarizer import add_deltas
 
 if __name__ == "__main__":
     profile = json.load(open("example/profile.json"))
-    website_texts = get_data_from_browser(use_recent=True, time_limit=240, browser_type='Chrome')[-5:] # HACK
+    website_texts = get_data_from_browser(use_recent=True, time_limit=240, browser_type='hard-coded')[-5:] # HACK
     print(f"getting deltas for {len(website_texts)} websites")
     print(website_texts)
     deltas = defaultdict(list)
@@ -14,4 +14,6 @@ if __name__ == "__main__":
     print("deltas:")
     print(deltas)
     print("Confirming deltas on frontend...")
+    with open("example/profile_diff.json", "w") as fp:
+        json.dump({k: " ".join(changes) for k, changes in deltas.items()}, fp)
 
