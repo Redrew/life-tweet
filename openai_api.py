@@ -96,7 +96,7 @@ class OpenAIEngine():
                     presence_penalty=0.0):
     response = openai.ChatCompletion.create(
       model=self.model_name,
-      messages=previous_messages,
+      messages=[{"role": "user", "content": previous_messages}],
       temperature=1.0,
       max_tokens=num_tokens,
       top_p=top_p,
@@ -107,8 +107,8 @@ class OpenAIEngine():
     return response
 
 
-MODEL_NAME = "text-davinci-002"
-engine = OpenAIEngine(MODEL_NAME)
+# MODEL_NAME = "text-davinci-002"
+# engine = OpenAIEngine(MODEL_NAME)
 
 
 def get_chat_gpt_output(prompt, top_p=0.5):
@@ -116,8 +116,9 @@ def get_chat_gpt_output(prompt, top_p=0.5):
     return output
 
 
-def get_confident_chat_gpt_output(prompt):
+def get_confident_chat_gpt_output(prompt,engine):
     # print(prompt)
+    # print(engine.model_name,prompt)
     output = engine.generate(prompt, num_tokens=5, num_samples=1, top_p=0.5,temperature=0.2)
     return output
 

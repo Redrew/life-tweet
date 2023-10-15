@@ -20,22 +20,25 @@ def evaluate_browser_history(summary, engine):
     results = {}
 
     for category in categories:
-        # question_yes = f"The following summary contains information about the user's {category.lower()}. Summary: {summary}"
-        # question_no = f"The following summary does not contain information about the user's {category.lower()}. Summary: {summary}"
+        question_yes = f"The following summary contains information about the user's {category.lower()}. Summary: {summary}"
+        question_no = f"The following summary does not contain information about the user's {category.lower()}. Summary: {summary}"
         # # print(question_yes)
-        # score_yes = engine.score(question_yes)
-        # score_no = engine.score(question_no)
+        score_yes = engine.score(question_yes)
+        score_no = engine.score(question_no)
         # print(question_yes,question_no)
-        # if score_yes >= score_no:
-        #     results[category] = 'yes'
-        # else:
-        #     results[category] = 'no'
-        prompt = f"Imagine you are a biographer. Analyze the following summary carefully. Is the user's {category.lower()} mentioned? Summary: '{summary}'. Respond with 'yes' or 'no' only."
-        answer = get_confident_chat_gpt_output(prompt).strip().lower()
-        if answer == "yes":
+        if score_yes >= score_no:
             results[category] = 'yes'
         else:
             results[category] = 'no'
+        # prompt = f"Imagine you are a biographer. A user reads an article with the following summary, is the user's {category.lower()} mentioned? Summary: '{summary}'. Respond with 'yes' or 'no' only."
+        # # print(engine.model_name)
+        # # import ipdb; ipdb.set_trace()
+        # answer = get_confident_chat_gpt_output(prompt,engine).strip().lower()
+        # print(prompt,answer)
+        # if answer == "yes":
+        #     results[category] = 'yes'
+        # else:
+        #     results[category] = 'no'
     return results
 
 

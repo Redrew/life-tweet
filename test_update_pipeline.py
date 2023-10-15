@@ -60,7 +60,7 @@ for summary in web_data:
             scores[label] = engine.score(statement)
         best = max(scores.keys(), key=scores.get)
         print(f"We learned something new about Alex's {category}: {best}")
-        new_info = get_chat_gpt_output(biographer_info + " You learned something new about Alex today. You learned that ").strip()
+        new_info = get_chat_gpt_output(biographer_info + " You learned something new about Alex today. You learned that ",engine).strip()
         print(f"We learned that: {new_info}")
         new_infos[category] = new_info
     for category, new_info in new_infos.items():
