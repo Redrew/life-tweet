@@ -88,9 +88,11 @@ def get_data_from_browser(use_recent = False, ignore_google=True, time_limit=600
         history = get_recent_history(time_limit=time_limit, browser_type=browser_type)
     else:
         history = get_all_history(browser_type=browser_type)
+    print(history)
     raw_html = scrape_websites(history, ignore_google=ignore_google)
     print('parsing texts scraped from html')
     website_texts = [get_summary_from_html(html) for html in raw_html]
+    print(website_texts)
     website_texts = [text for text in website_texts if 'html' not in text.lower()]
     return website_texts
 

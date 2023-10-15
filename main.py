@@ -16,4 +16,8 @@ if __name__ == "__main__":
     print("Confirming deltas on frontend...")
     with open("example/profile_diff.json", "w") as fp:
         json.dump({k: " ".join(changes) for k, changes in deltas.items()}, fp)
+    with open("example/profile.json", "w") as fp:
+        for k, changes in deltas.items():
+            profile[k] += " " + " ".join(changes)
+        json.dump(profile, fp)
 
