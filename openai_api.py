@@ -111,8 +111,8 @@ MODEL_NAME = "text-davinci-002"
 engine = OpenAIEngine(MODEL_NAME)
 
 
-def get_chat_gpt_output(prompt):
-    output = engine.generate(prompt, num_tokens=256, num_samples=1, top_p=0.5)
+def get_chat_gpt_output(prompt, top_p=0.5):
+    output = engine.generate(prompt, num_tokens=256, num_samples=1, top_p=top_p)
     return output
 
 
@@ -120,6 +120,7 @@ def get_confident_chat_gpt_output(prompt):
     # print(prompt)
     output = engine.generate(prompt, num_tokens=5, num_samples=1, top_p=0.5,temperature=0.2)
     return output
+
 
 if __name__ == "__main__":
   print(get_chat_gpt_output("sample text"))
