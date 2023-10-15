@@ -15,7 +15,7 @@ categories = [
     # "Education"
 ]
 
-def evaluate_browser_history(summary,engine):
+def evaluate_browser_history(summary, engine):
 
     results = {}
 
@@ -49,5 +49,5 @@ if __name__ == "__main__":
         data = pickle.load(f)
     # summary = "John, a 25-year-old who recently looked up flights to Paris and enjoys hiking, graduated from Harvard."
     summary = "The Culinary Institute of America offers a deep dive into the world of Mediterranean cuisine, emphasizing its health benefits and rich history. Students and hobby chefs alike explore hands-on cooking workshops, preparing dishes from Greece, Italy, and Spain. Beyond just cooking, the curriculum delves into the historical significance of dishes, linking them to ancient cultures and traditions."
-    result = evaluate_browser_history(summary)
+    result = evaluate_browser_history(summary, engine)
     print(result)
