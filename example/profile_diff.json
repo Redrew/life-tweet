@@ -1,0 +1,10 @@
+{
+	"city": "San Francisco, CA",
+	"hobbies": "Alex started playing frisbee.",
+	"job_hunting_status": {
+		"status": "Signed offer with Google."
+	},
+	"traveling_status": {
+		"destinations_explored": ["Hillsborough, CA"]
+	}
+}
