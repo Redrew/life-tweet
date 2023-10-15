@@ -5,25 +5,6 @@
 	"education": "Cranberry Melon University, Bachelor of Arts in Marketing, 2017",
 	"political_preference": "Alex is a complex individual with a unique set of political beliefs and affiliations. They could be described as a 'Centrist Progressive.' This means that Alex holds a mix of conservative and liberal viewpoints, often aligning with different political ideologies depending on the issue at hand. On social issues, Alex tends to lean more liberal. They are a strong advocate for LGBTQ+ rights, gender equality, and environmental protection. Alex believes in comprehensive healthcare reform and affordable access to education. They also support a pathway to citizenship for undocumented immigrants and are generally in favor of stricter gun control measures. On the other hand, when it comes to fiscal and economic policies, Alex holds more conservative views. They are a proponent of free-market capitalism and believe in limited government intervention in the economy. Alex supports lower taxes for both individuals and businesses and is skeptical of excessive government spending. Alex's foreign policy views are influenced by a commitment to diplomacy and international cooperation. They generally favor a multilateral approach to global issues, including the Paris Agreement and the United Nations. However, they are also strong supporters of a strong national defense and maintaining a robust military. Overall, Alex's political affiliation could be described as a \"pragmatic centrist\" who seeks common-sense solutions to complex problems, often choosing positions that align with their core values rather than strict party lines.",
 	"hobbies": "Alex enjoys capturing moments and exploring their creative side through photography. They might have a collection of beautiful pictures from their travels and everyday life. Alex is a food enthusiast who loves experimenting in the kitchen, trying out new recipes and creating delicious dishes from various cuisines. Alex has a deep appreciation for the great outdoors and often spends their weekends hiking in the nearby forests and nature reserves.",
-	"job_hunting_status": {
-		"job_title_sought": "Marketing Manager",
-		"status": "Actively Seeking",
-		"professional_preference": "Alex is an experienced marketing professional with a strong background in digital marketing, branding, and content strategy. They are seeking a challenging role that allows them to utilize their skills and creativity to drive marketing initiatives and contribute to a dynamic team."
-	},
-	"traveling_status": {
-		"budget": "Alex is working with a budget of around $3,000 for their upcoming vacation.",
-		"destinations_explored": [
-			"Santorini, Greece", "Kyoto, Japan", "Machu Picchu, Peru"
-		],
-		"accomodation_preference": "Alex is leaning toward mid-range hotels or boutique accommodations that offer comfort and unique experiences.",
-		"activities_of_interest": "Alex is keen on a mix of relaxation and adventure, which includes exploring local culture, dining, and potentially hiking or water-based activities.",
-		"duration_preference": "The preferred travel dates are in early summer, with a duration of approximately 10 days.",
-		"flight_research": "Alex has been exploring flight options from their nearest major airport and is considering both direct and layover flights for cost-effectiveness."
-	},
-	"dating_status": {
-		"age_range": "Alex is open to dating someone within a similar age range, ideally between 28 and 35, but is more focused on compatibility and shared interests than age.",
-		"personality": "Alex values kindness, a good sense of humor, and intelligence in a potential partner. They are attracted to individuals who are open-minded, empathetic, and have a positive outlook on life.",
-		"hobbies_and_interests": "Alex is looking for someone who shares their passion for outdoor activities, such as hiking and traveling, as well as an appreciation for the arts and cultural experiences like visiting museums and attending live music events.",
-		"deal_breakers": "Alex is not interested in dating someone who is overly superficial. They also do not want to be with someone who is closed-minded or intolerant of others' beliefs and lifestyles."
-	}
+	"jobs": "Alex is a machine learning engineer.",
+	"traveling_preferences": "Alex is leaning toward mid-range hotels or boutique accommodations that offer comfort and unique experiences."
 }
