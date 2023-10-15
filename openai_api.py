@@ -62,7 +62,8 @@ class OpenAIEngine():
                num_tokens=32,
                num_samples=1,
                frequency_penalty=0.0,
-              presence_penalty=0.0):
+              presence_penalty=0.0,
+              temperature=1.0):
     """Generates text given the provided prompt text.
 
     This only works for the OpenAI models which support the legacy `Completion`
@@ -74,7 +75,7 @@ class OpenAIEngine():
     response = openai.Completion.create(
       engine=self.model_name,
       prompt=prompt,
-      temperature=1.0,
+      temperature=temperature,
       max_tokens=num_tokens,
       top_p=top_p,
       n=num_samples,
@@ -112,6 +113,12 @@ engine = OpenAIEngine(MODEL_NAME)
 
 def get_chat_gpt_output(prompt):
     output = engine.generate(prompt, num_tokens=256, num_samples=1, top_p=0.5)
+    return output
+
+
+def get_confident_chat_gpt_output(prompt):
+    # print(prompt)
+    output = engine.generate(prompt, num_tokens=5, num_samples=1, top_p=0.5,temperature=0.2)
     return output
 
 if __name__ == "__main__":

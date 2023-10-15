@@ -1,8 +1,7 @@
 import openai
 from openai_api import *
 import numpy as np
-# Set up the OpenAI API key
-openai.api_key = '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'
+
 
 categories = [
     "hobbies",
@@ -14,21 +13,27 @@ categories = [
     # "Education"
 ]
 
-def evaluate_browser_history(summary):
+def evaluate_browser_history(summary,engine):
 
     results = {}
 
     for category in categories:
-        question_yes = f"The following summary contains information about the user's {category.lower()}. Summary: {summary}"
-        question_no = f"The following summary does not contain information about the user's {category.lower()}. Summary: {summary}"
-        # print(question_yes)
-        score_yes = engine.score(question_yes)
-        score_no = engine.score(question_no)
-        if score_yes >= score_no:
+        # question_yes = f"The following summary contains information about the user's {category.lower()}. Summary: {summary}"
+        # question_no = f"The following summary does not contain information about the user's {category.lower()}. Summary: {summary}"
+        # # print(question_yes)
+        # score_yes = engine.score(question_yes)
+        # score_no = engine.score(question_no)
+        # print(question_yes,question_no)
+        # if score_yes >= score_no:
+        #     results[category] = 'yes'
+        # else:
+        #     results[category] = 'no'
+        prompt = f"Imagine you are a biographer. Analyze the following summary carefully. Is the user's {category.lower()} mentioned? Summary: '{summary}'. Respond with 'yes' or 'no' only."
+        answer = get_confident_chat_gpt_output(prompt).strip().lower()
+        if answer == "yes":
             results[category] = 'yes'
         else:
             results[category] = 'no'
-        
     return results
 
 
