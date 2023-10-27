@@ -3,11 +3,11 @@ from openai_api import *
 import numpy as np
 
 # Set up the OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'OPENAPI-KEY'
 
 categories = {
     "hobbies": "hobbies",
-    "jobs": "jobs",
+    # "jobs": "jobs",
     # "traveling_preferences": "traveling preferences"
     # "Political alignment",
     # "Food preference",
@@ -24,6 +24,9 @@ def evaluate_browser_history(summary, engine):
     for category, desc in categories.items():
         question_yes = f"The following summary contains information about the user's {desc.lower()}. Summary: {summary}"
         question_no = f"The following summary does not contain information about the user's {desc.lower()}. Summary: {summary}"
+
+        # question_yes = f"Summary: {summary}. The above summary contains information specifically about the user's {category.lower()}."
+        # question_no = f"Summary: {summary}. The above summary DOES NOT contain any specific information about the user's {category.lower()} at all."
         # # print(question_yes)
         score_yes = engine.score(question_yes)
         score_no = engine.score(question_no)

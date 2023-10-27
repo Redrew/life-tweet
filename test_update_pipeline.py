@@ -1,6 +1,6 @@
 from openai_api import *
 
-OPENAI_SECRET_KEY = "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"
+OPENAI_SECRET_KEY = "OPENAPI-KEY"
 openai.api_key = OPENAI_SECRET_KEY
 engine = OpenAIEngine("text-davinci-003")
 
